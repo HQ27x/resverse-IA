@@ -1,7 +1,7 @@
 # Resverse IA
 
 Nota: Una vez instalado el uso es sencillo en tu ide de preferencia (lo probé en antigravity) pides que inicie el proyecto Resverse IA y que lo aplique en reto ejemplo (cambies el archivo exe, dll u otro y lo renombras a reto.dll o reto.exe) lo examinara y te dará un resumen ya lo dejo en tus manos como lo uses Guiño Guiño puedes decirle 
-"Genera un plan que abarque todo y que la herramienta se encargue" te dará un montón de texto e información si no logras lo que quieres puede decirle "esta bien pero puede hacerlo mejor", lo dejo en tus manos. este repo fue creado con fines educativos basado en ingeniería inversa con ia  
+"Genera un plan que abarque todo y que la herramienta se encargue" te dará un montón de texto e información si no logras lo que quieres puede decirle "esta bien pero puede hacerlo mejor" el resultado te lo dejara por ejemplo reto.dll.patch o reto.exe.patch simplemente borras el .patch, lo dejo en tus manos. este repo fue creado con fines educativos basado en ingeniería inversa con ia  
 
 Puente local entre **Ghidra**, un **modelo de IA local (Ollama)** y un **Patch Lab** con guardrails. La IA no recibe binarios crudos ni ejecuta acciones peligrosas: recibe *paquetes de evidencia* con IDs estables y responde con citas verificables. Para editar, el motor genera y valida candidatos deterministas; la IA solo elige uno y un humano aprueba el plan, que solo se aplica sobre **copias**.
 
