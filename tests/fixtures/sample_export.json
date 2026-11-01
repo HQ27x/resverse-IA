@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "program": {
+    "name": "reto.dll",
+    "path": "",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "format": "PE",
+    "arch": "x86_64",
+    "bits": 64,
+    "endian": "little",
+    "image_base": "0x180000000",
+    "language": "x86:LE:64:default"
+  },
+  "functions": [
+    {
+      "entry": "0x180001000",
+      "name": "Validate",
+      "namespace": "Global",
+      "signature": "int Validate(char *key)",
+      "return_type": "int",
+      "parameters": [
+        {
+          "name": "key",
+          "type": "char *",
+          "ordinal": 1
+        }
+      ],
+      "size": 64,
+      "decompiled": "int Validate(char *key)\n{\n  int result;\n  if (strcmp(key, \"REIA\") == 0) {\n    result = 1;\n  }\n  else {\n    result = 0;\n  }\n  return result;\n}\n",
+      "callers": [],
+      "callees": [
+        "0x180001100"
+      ],
+      "strings": [
+        "Invalid key"
+      ],
+      "xrefs": [
+        {
+          "from": "0x180001200",
+          "to": "0x180001000",
+          "type": "UNCONDITIONAL_CALL"
+        }
+      ],
+      "is_external": false,
+      "is_thunk": false,
+      "decompilation_error": null
+    },
+    {
+      "entry": "0x180001100",
+      "name": "check_key",
+      "namespace": "Global",
+      "signature": "int check_key(char *key)",
+      "return_type": "int",
+      "parameters": [
+        {
+          "name": "key",
+          "type": "char *",
+          "ordinal": 1
+        }
+      ],
+      "size": 48,
+      "decompiled": "int check_key(char *key)\n{\n  if (key == (char *)0x0) {\n    return 0;\n  }\n  return Validate(key);\n}\n",
+      "callers": [
+        "0x180001000"
+      ],
+      "callees": [
+        "0x180002000"
+      ],
+      "strings": [
+        "REIA"
+      ],
+      "xrefs": [
+        {
+          "from": "0x180001010",
+          "to": "0x180001100",
+          "type": "UNCONDITIONAL_CALL"
+        }
+      ],
+      "is_external": false,
+      "is_thunk": false,
+      "decompilation_error": null
+    }
+  ],
+  "exports": [
+    {
+      "name": "Validate",
+      "address": "0x180001000",
+      "ordinal": 1
+    }
+  ],
+  "imports": [
+    {
+      "name": "strcmp",
+      "library": "msvcrt.dll",
+      "address": "0x180002000"
+    }
+  ],
+  "strings": [
+    {
+      "address": "0x180003000",
+      "value": "Invalid key",
+      "encoding": "ascii"
+    },
+    {
+      "address": "0x180003010",
+      "value": "REIA",
+      "encoding": "ascii"
+    }
+  ],
+  "data_types": [
+    {
+      "name": "KeyInfo",
+      "path": "/KeyInfo",
+      "kind": "Structure",
+      "length": 32
+    }
+  ],
+  "entry_points": [
+    "0x180001000"
+  ],
+  "sections": [
+    {
+      "name": ".text",
+      "start": "0x180001000",
+      "end": "0x180002000",
+      "size": 4096,
+      "read": true,
+      "write": false,
+      "execute": true,
+      "volatile": false
+    }
+  ]
+}
